@@ -1,0 +1,27 @@
+<form [formGroup]="basicFormvalidation">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control"
+           id="name" formControlName="name" />
+    <div *ngIf="basicsubmit && basic.name.errors" class="text-danger">
+      <span *ngIf="basic.name.errors.required">Please enter name.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" class="form-control"
+           id="age" formControlName="age" />
+    <div *ngIf="basicsubmit && basic.age.errors" class="text-danger">
+      <span *ngIf="basic.age.errors.required">Please enter age.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control"
+           id="email" formControlName="email" />
+    <div *ngIf="basicsubmit && basic.email.errors" class="text-danger">
+      <span *ngIf="basic.email.errors.required">Please enter email.</span>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="button" (click)="submit()">Submit</button>
+</form>
